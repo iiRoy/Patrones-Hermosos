@@ -4,843 +4,859 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 
 * {
-    font-family: "Asap", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-    font-variation-settings:
-        "wdth" 100;
+  font-family: 'Asap', sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: 'wdth' 100;
+  box-sizing: border-box;
 }
-
-
 
 /* styles/globals.css o tu módulo CSS */
 .scrollbar-hide {
-    -ms-overflow-style: none;
-    /* IE y Edge */
-    scrollbar-width: none;
-    /* Firefox */
+  -ms-overflow-style: none;
+  /* IE y Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
 .scrollbar-hide::-webkit-scrollbar {
-    display: none;
-    /* Chrome, Safari y Opera */
+  display: none;
+  /* Chrome, Safari y Opera */
 }
 
 /* En tu archivo CSS global o módulo */
 .custom-scrollbar {
-    /* Para Firefox: barra delgada y colores personalizados */
-    scrollbar-width: auto;
-    scrollbar-color: #A259FF;
-    /* thumb y track respectivamente */
+  /* Para Firefox: barra delgada y colores personalizados */
+  scrollbar-width: auto;
+  scrollbar-color: #a259ff;
+  /* thumb y track respectivamente */
 }
 
 .custom-scrollbar::-webkit-scrollbar {
-    height: 8px;
-    width: 6px;
-    /* Para scroll horizontal, o 'width' para vertical */
+  height: 8px;
+  width: 6px;
+  /* Para scroll horizontal, o 'width' para vertical */
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
-    background: #2E2B3A;
-    /* Color del fondo del scrollbar */
+  background: #2e2b3a;
+  /* Color del fondo del scrollbar */
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, #B77690 0%, #C267FF 100%);
-    border-radius: 10px;
-    /* Para redondear el thumb */
+  background: linear-gradient(180deg, #b77690 0%, #c267ff 100%);
+  border-radius: 10px;
+  /* Para redondear el thumb */
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(180deg, #C267FF 0%, #B77690 100%);
+  background: linear-gradient(180deg, #c267ff 0%, #b77690 100%);
 }
 
 :root {
-    --primary: #97639c;
-    --primary-shade: #6e2d75;
-    --primary-disabled: #301e31;
-    --secondary: #683756;
-    --secondary-shade: #c57fab;
-    --secondary-disabled: #402436;
-    --success: #4b914e;
-    --success-dark: #125115;
-    --success-disabled: #2f352f;
-    --error: #cc445c;
-    --error-dark: #970922;
-    --error-disabled: #51262e;
-    --warning: #c17a37;
-    --warning-dark: #8d4807;
-    --warning-disabled: #503d2c;
-    --text-color: #ebe6eb;
-    --accent: #b77690;
-    --accent-disabled: #3f2831;
-    --dim: #616161;
-    --background: #110e11;
+  --primary: #97639c;
+  --primary-shade: #6e2d75;
+  --primary-disabled: #301e31;
+  --secondary: #683756;
+  --secondary-shade: #c57fab;
+  --secondary-disabled: #402436;
+  --success: #4b914e;
+  --success-dark: #125115;
+  --success-disabled: #2f352f;
+  --error: #cc445c;
+  --error-dark: #970922;
+  --error-disabled: #51262e;
+  --warning: #c17a37;
+  --warning-dark: #8d4807;
+  --warning-disabled: #503d2c;
+  --text-color: #ebe6eb;
+  --accent: #b77690;
+  --accent-disabled: #3f2831;
+  --dim: #616161;
+  --background: #110e11;
 }
 
 .custom-button {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 175px;
-    gap: 10px;
-    background-color: #6e2d75;
-    color: var(--text-color);
-    border: none;
-    border-radius: 10px;
-    padding: 10px 20px;
-    font-size: 24px;
-    cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 175px;
+  gap: 10px;
+  background-color: #6e2d75;
+  color: var(--text-color);
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 15px;
+  cursor: pointer;
 }
 
 .round-button {
-    width: 50px;
-    border-radius: 50%;
-    cursor: pointer;
-    border-color: transparent;
-    font-size: 24px;
+  width: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  border-color: transparent;
+  font-size: 24px;
 }
 
 .icon,
 .close {
-    font-size: 26px;
-    color: var(--text-color);
+  font-size: 26px;
+  color: var(--text-color);
 }
 
 .close {
-    margin-left: auto;
+  margin-left: auto;
 }
 
 .parent-container {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .row {
-    display: flex;
-    gap: 10px;
+  display: flex;
+  gap: 10px;
 }
 
 .container-inputs {
-    width: 1200px;
+  width: 1200px;
 }
 
 .label-input {
-    font-size: 24px;
-    font-weight: bold;
-    color: var(--text-color);
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--text-color);
 }
 
 .description {
-    color: var(--dim);
-    font-size: 14px;
-    margin-bottom: 5px;
+  color: var(--dim);
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.description-input {
+  color: var(--text-color);
+  font-size: 14px;
+  margin-bottom: 5px;
 }
 
 .input {
-    display: flex;
-    align-items: center;
-    background-color: var(--accent);
-    border-radius: 10px;
-    padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--accent);
+  border-radius: 10px;
+  padding: 10px;
 }
 
 .input i {
-    color: var(--text-color);
-    margin-right: 10px;
+  color: var(--text-color);
+  margin-right: 10px;
+}
+
+.icon-input {
+  color: var(--text-color);
 }
 
 .input input {
-    background: none;
-    border: none;
-    outline: none;
-    color: var(--text-color);
-    font-size: 16px;
-    width: 100%;
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--text-color);
+  font-size: 16px;
+  width: 100%;
 }
 
 .error-text {
-    color: var(--text-color);
-    font-size: 14px;
-    margin-top: 5px;
+  color: var(--text-color);
+  font-size: 14px;
+  margin-top: 5px;
 }
 
 .error-text-red {
-    color: var(--error);
-    font-size: 14px;
-    margin-top: 5px;
+  color: var(--error);
+  font-size: 14px;
+  margin-top: 5px;
 }
 
 /*Colores botones*/
 .button-primary {
-    background-color: var(--primary);
+  background-color: var(--primary);
 }
 
 .button-primary:hover {
-    background-color: var(--primary-shade);
+  background-color: var(--primary-shade);
 }
 
 .primary-disabled {
-    background-color: var(--primary-disabled);
-    cursor: auto;
+  background-color: var(--primary-disabled);
+  cursor: auto;
 }
 
 .button-secondary {
-    background-color: var(--secondary);
+  background-color: var(--secondary);
 }
 
 .button-secondary-shade {
-    background-color: var(--secondary-shade);
+  background-color: var(--secondary-shade);
 }
 
 .button-secondary:hover {
-    background-color: var(--secondary-shade);
+  background-color: var(--secondary-shade);
 }
 
 .secondary-disabled {
-    background-color: var(--secondary-disabled);
-    cursor: auto;
+  background-color: var(--secondary-disabled);
+  cursor: auto;
 }
 
 .button-success {
-    background-color: var(--success);
+  background-color: var(--success);
 }
 
 .button-success:hover {
-    background-color: var(--success-dark);
+  background-color: var(--success-dark);
 }
 
 .success-disabled {
-    background-color: var(--success-disabled);
-    cursor: auto;
+  background-color: var(--success-disabled);
+  cursor: auto;
 }
 
 .button-error {
-    background-color: var(--error);
+  background-color: var(--error);
 }
 
 .button-error:hover {
-    background-color: var(--error-dark);
+  background-color: var(--error-dark);
 }
 
 .error-disabled {
-    background-color: var(--error-disabled);
-    cursor: auto;
+  background-color: var(--error-disabled);
+  cursor: auto;
 }
 
 .button-warning {
-    background-color: var(--warning);
+  background-color: var(--warning);
 }
 
 .button-warning:hover {
-    background-color: var(--warning-dark);
+  background-color: var(--warning-dark);
 }
 
 .warning-disabled {
-    background-color: var(--warning-disabled);
-    cursor: auto;
+  background-color: var(--warning-disabled);
+  cursor: auto;
 }
 
 /*Colores inputs*/
 .input-accent {
-    background-color: var(--accent);
+  background-color: var(--accent);
 }
 
 .input-accent-disabled {
-    background-color: var(--accent-disabled);
+  background-color: var(--accent-disabled);
 }
 
 .input-primary {
-    background-color: var(--primary);
+  background-color: var(--primary);
 }
 
 .input-primary-disabled {
-    background-color: var(--primary-disabled);
+  background-color: var(--primary-disabled);
 }
 
 .input-secondary {
-    background-color: var(--secondary);
+  background-color: var(--secondary);
 }
 
 .input-secondary-disabled {
-    background-color: var(--secondary-disabled);
+  background-color: var(--secondary-disabled);
 }
 
 .input-secondary-shade {
-    background-color: var(--secondary-shade);
+  background-color: var(--secondary-shade);
 }
 
 .input-secondary-shade-disabled {
-    background-color: #361c2d;
+  background-color: #361c2d;
 }
 
 .input-text-color {
-    background-color: var(--text-color);
+  background-color: var(--text-color);
 }
 
 .input-text-color-disabled {
-    background-color: #686868;
+  background-color: #686868;
 }
 
 .input-text-color i {
-    color: var(--background);
+  color: var(--background);
 }
 
 .input-warning {
-    background-color: var(--warning);
+  background-color: var(--warning);
 }
 
 .dim {
-    color: var(--dim);
+  color: var(--dim);
 }
 
 .dim i {
-    color: var(--dim);
+  color: var(--dim);
 }
 
 /*Notificaciones*/
 
 .notification {
-    display: flex;
-    align-items: center;
-    background-color: #e6e1e5;
-    border-radius: 16px;
-    padding: 16px;
-    width: 400px;
-    position: relative;
+  display: flex;
+  align-items: center;
+  background-color: #e6e1e5;
+  border-radius: 16px;
+  padding: 16px;
+  width: 400px;
+  position: relative;
 }
 
 .notification-green-two {
-    color: var(--text-color);
-    background-color: var(--success);
+  color: var(--text-color);
+  background-color: var(--success);
 }
 
 .notification-yellow-two {
-    color: var(--text-color);
-    background-color: var(--warning);
+  color: var(--text-color);
+  background-color: var(--warning);
 }
 
 .notification-red-two {
-    color: var(--text-color);
-    background-color: var(--error);
+  color: var(--text-color);
+  background-color: var(--error);
 }
 
 .notification-purple-two {
-    color: var(--text-color);
-    background-color: var(--primary);
+  color: var(--text-color);
+  background-color: var(--primary);
 }
 
 .notification-icon {
-    border-radius: 16px 0 0 16px;
-    padding: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  border-radius: 16px 0 0 16px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .notification-icon-green {
-    background-color: var(--success);
+  background-color: var(--success);
 }
 
 .notification-icon-green-two {
-    background-color: var(--success-dark);
+  background-color: var(--success-dark);
 }
 
 .notification-icon-yellow {
-    background-color: var(--warning);
+  background-color: var(--warning);
 }
 
 .notification-icon-yellow-two {
-    background-color: var(--warning-dark);
+  background-color: var(--warning-dark);
 }
 
 .notification-icon-red {
-    background-color: var(--error);
+  background-color: var(--error);
 }
 
 .notification-icon-red-two {
-    background-color: var(--error-dark);
+  background-color: var(--error-dark);
 }
 
 .notification-icon-purple {
-    background-color: var(--primary);
+  background-color: var(--primary);
 }
 
 .notification-icon-purple-two {
-    background-color: var(--primary-shade);
+  background-color: var(--primary-shade);
 }
 
 .notification-icon .icon {
-    font-size: 24px;
+  font-size: 24px;
 }
 
 .notification-content {
-    padding-left: 16px;
-    flex-grow: 1;
+  padding-left: 16px;
+  flex-grow: 1;
 }
 
 .notification-title {
-    font-size: 18px;
-    font-weight: bold;
-    margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
 }
 
 .notification-title-green {
-    color: var(--success);
+  color: var(--success);
 }
 
 .notification-title-yellow {
-    color: var(--warning);
+  color: var(--warning);
 }
 
 .notification-title-red {
-    color: var(--error);
+  color: var(--error);
 }
 
 .notification-title-purple {
-    color: var(--primary);
+  color: var(--primary);
 }
 
 .notification-text {
-    font-size: 14px;
-    margin: 4px 0 0;
+  font-size: 14px;
+  margin: 4px 0 0;
 }
 
 .notification-text-black {
-    color: black;
+  color: black;
 }
 
 .notification-close {
-    background: none;
-    border: none;
-    font-size: 20px;
-    cursor: pointer;
-    position: absolute;
-    top: 8px;
-    right: 8px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  position: absolute;
+  top: 8px;
+  right: 8px;
 }
 
 .notification-close-green {
-    color: var(--success);
+  color: var(--success);
 }
 
 .notification-close-green:hover {
-    color: var(--success-dark);
+  color: var(--success-dark);
 }
 
 .notification-close-yellow {
-    color: var(--warning);
+  color: var(--warning);
 }
 
 .notification-close-yellow:hover {
-    color: var(--warning-dark);
+  color: var(--warning-dark);
 }
 
 .notification-close-red {
-    color: var(--error);
+  color: var(--error);
 }
 
 .notification-close-red:hover {
-    color: var(--error-dark);
+  color: var(--error-dark);
 }
 
 .notification-close-purple {
-    color: var(--primary);
+  color: var(--primary);
 }
 
 .notification-close-yellow:hover {
-    color: var(--primary-shade);
+  color: var(--primary-shade);
 }
 
 .notification-close-white {
-    color: var(--text-color);
+  color: var(--text-color);
 }
 
 .notification-close-white:hover {
-    color: var(--dim);
+  color: var(--dim);
 }
 
 /*Paginas*/
 
 .pagination {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .pagination a,
 .pagination .dots {
-    text-decoration: none;
-    color: white;
-    font-size: 20px;
-    padding: 8px 12px;
-    border-radius: 8px;
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  padding: 8px 12px;
+  border-radius: 8px;
 }
 
 .pagination .prev,
 .pagination .next {
-    color: var(--text-color);
-    font-weight: 400;
-    display: flex;
-    align-items: center;
+  color: var(--text-color);
+  font-weight: 400;
+  display: flex;
+  align-items: center;
 }
 
 .pagination .double-arrow {
-    font-size: 22px;
-    margin-right: 4px;
+  font-size: 22px;
+  margin-right: 4px;
 }
 
 .pagination .double-arrow-primary {
-    color: var(--primary);
+  color: var(--primary);
 }
 
 .pagination .double-arrow-secondary-shade {
-    color: var(--secondary-shade);
+  color: var(--secondary-shade);
 }
 
 .pagination .double-arrow-accent {
-    color: var(--accent);
+  color: var(--accent);
 }
 
 .pagination .next .double-arrow {
-    margin-left: 4px;
+  margin-left: 4px;
 }
 
 .pagination .page {
-    background: transparent;
-    border: none;
-    color: white;
+  background: transparent;
+  border: none;
+  color: white;
 }
 
 .pagination .active {
-    background-color: var(--primary);
-    color: white;
-    font-weight: bold;
+  background-color: var(--primary);
+  color: white;
+  font-weight: bold;
 }
 
 .pagination .active-primary {
-    background-color: var(--primary);
+  background-color: var(--primary);
 }
 
 .pagination .active-secondary-shade {
-    background-color: var(--secondary-shade);
+  background-color: var(--secondary-shade);
 }
 
 .pagination .active-accent {
-    background-color: var(--accent);
+  background-color: var(--accent);
 }
 
 .pagination .dots {
-    color: var(--text-color);
+  color: var(--text-color);
 }
 
 /*Option button*/
 
+:root {
+  --icon-stroke-width: 0;
+}
+
 .option-link {
-    gap: 1vw;
-    text-decoration: none;
-    color: var(--text-color);
-    font-size: clamp(1em, 1.5vw, 2em);
-    transition: color 0.3s ease-in-out;
+  gap: 1vw;
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: clamp(1em, 1.5vw, 2em);
+  transition: color 0.3s ease-in-out;
+  font-weight: 300;
 }
 
 .option-link:hover {
-    color: #c7c7c7;
+  color: var(--primary);
 }
 
 .option-icon {
-    min-width: 17px;
-    min-height: 17px;
+  min-width: 17px;
+  min-height: 17px;
+  --icon-stroke-width: 2;
+}
+
+.option-icon.active {
+  --icon-stroke-width: 0;
 }
 
 .option-label {
-    font-weight: 300;
-    max-width: min-content;
-    text-align: center;
+  max-width: min-content;
+  text-align: center;
 }
 
 .option-link.active {
-    color: var(--accent);
-    text-decoration: underline;
-    font-weight: bold;
+  color: var(--accent);
+  text-decoration: underline;
+  font-weight: bolder;
 }
 
 .checkbox-circle {
-    appearance: none;
-    -webkit-appearance: none;
-    width: 1.6vmax;
-    height: 1.6vmax;
-    padding: 1.2vh;
-    border-radius: 50%;
-    /* Hacerlo circular */
-    position: relative;
-    outline: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 1.6vmax;
+  height: 1.6vmax;
+  padding: 1.2vh;
+  border-radius: 50%;
+  /* Hacerlo circular */
+  position: relative;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .checkbox-circle:checked::before {
-    content: '✔';
-    /* Marcar como seleccionado */
-    color: white;
-    font-size: 2vh;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  content: '✔';
+  /* Marcar como seleccionado */
+  color: white;
+  font-size: 2vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .checkbox-odd {
-    background-color: #eee;
-    border: 0.5vh solid var(--primary-shade);
-    /* Morado */
+  background-color: #eee;
+  border: 0.5vh solid var(--primary-shade);
+  /* Morado */
 }
 
 .checkbox-odd:checked {
-    background-color: var(--primary-shade);
-    /* Morado cuando está seleccionado */
-    border-color: var(--primary-shade);
+  background-color: var(--primary-shade);
+  /* Morado cuando está seleccionado */
+  border-color: var(--primary-shade);
 }
 
 .checkbox-even {
-    background-color: #eee;
-    border: 0.5vh solid var(--secondary-shade);
-    /* Violeta oscuro */
+  background-color: #eee;
+  border: 0.5vh solid var(--secondary-shade);
+  /* Violeta oscuro */
 }
 
 .checkbox-even:checked {
-    background-color: var(--secondary-shade);
-    /* Violeta oscuro cuando está seleccionado */
-    border-color: var(--secondary-shade);
+  background-color: var(--secondary-shade);
+  /* Violeta oscuro cuando está seleccionado */
+  border-color: var(--secondary-shade);
 }
-
 
 /*Checkboxes*/
 .checkbox-container {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
 }
 
 /* Nativo pero estilizado */
-.checkbox-container input[type="checkbox"] {
-    width: 20px;
-    height: 20px;
-    appearance: none;
-    -webkit-appearance: none;
-    border-radius: 6px;
-    border: 2px solid transparent;
-    position: relative;
-    cursor: pointer;
-    transition: all 0.2s ease;
+.checkbox-container input[type='checkbox'] {
+  width: 20px;
+  height: 20px;
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 6px;
+  border: 2px solid transparent;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-.checkbox-container input[type="checkbox"]:checked::before {
-    content: '';
-    position: absolute;
-    top: 2px;
-    left: 6px;
-    width: 5px;
-    height: 10px;
-    border: solid white;
-    border-width: 0 2px 2px 0;
-    transform: rotate(45deg);
+.checkbox-container input[type='checkbox']:checked::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 6px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
 }
 
 /* Colored styles */
 .purple-checkbox {
-    color: var(--primary);
+  color: var(--primary);
 }
 
 .green-checkbox {
-    color: var(--success);
+  color: var(--success);
 }
 
 .red-checkbox {
-    color: var(--error);
+  color: var(--error);
 }
 
 .yellow-checkbox {
-    color: var(--warning);
+  color: var(--warning);
 }
 
 .white-checkbox {
-    color: var(--text-color);
+  color: var(--text-color);
 }
 
-.white-checkbox input[type="checkbox"] {
-    background-color: var(--text-color);
+.white-checkbox input[type='checkbox'] {
+  background-color: var(--text-color);
 }
 
-.purple-checkbox input[type="checkbox"] {
-    background-color: var(--primary);
+.purple-checkbox input[type='checkbox'] {
+  background-color: var(--primary);
 }
 
-.red-checkbox input[type="checkbox"] {
-    background-color: var(--error);
+.red-checkbox input[type='checkbox'] {
+  background-color: var(--error);
 }
 
-.green-checkbox input[type="checkbox"] {
-    background-color: var(--success);
+.green-checkbox input[type='checkbox'] {
+  background-color: var(--success);
 }
 
-.yellow-checkbox input[type="checkbox"] {
-    background-color: var(--warning);
+.yellow-checkbox input[type='checkbox'] {
+  background-color: var(--warning);
 }
 
 /* Border when requested */
-.with-border.purple-checkbox input[type="checkbox"] {
-    background-color: transparent;
-    border-color: var(--text-color);
+.with-border.purple-checkbox input[type='checkbox'] {
+  background-color: transparent;
+  border-color: var(--text-color);
 }
 
-.with-border.purple-checkbox input[type="checkbox"] {
-    background-color: transparent;
-    border-color: var(--primary);
+.with-border.purple-checkbox input[type='checkbox'] {
+  background-color: transparent;
+  border-color: var(--primary);
 }
 
-.with-border.red-checkbox input[type="checkbox"] {
-    background-color: transparent;
-    border-color: var(--error);
+.with-border.red-checkbox input[type='checkbox'] {
+  background-color: transparent;
+  border-color: var(--error);
 }
 
-.with-border.green-checkbox input[type="checkbox"] {
-    background-color: transparent;
-    border-color: var(--success);
+.with-border.green-checkbox input[type='checkbox'] {
+  background-color: transparent;
+  border-color: var(--success);
 }
 
-.with-border.yellow-checkbox input[type="checkbox"] {
-    background-color: transparent;
-    border-color: var(--warning);
+.with-border.yellow-checkbox input[type='checkbox'] {
+  background-color: transparent;
+  border-color: var(--warning);
 }
 
 /* When checked with border, fill background */
-.with-border.white-checkbox input[type="checkbox"]:checked {
-    background-color: var(--text-color);
+.with-border.white-checkbox input[type='checkbox']:checked {
+  background-color: var(--text-color);
 }
 
-.with-border.purple-checkbox input[type="checkbox"]:checked {
-    background-color: var(--primary);
+.with-border.purple-checkbox input[type='checkbox']:checked {
+  background-color: var(--primary);
 }
 
-.with-border.red-checkbox input[type="checkbox"]:checked {
-    background-color: var(--error);
+.with-border.red-checkbox input[type='checkbox']:checked {
+  background-color: var(--error);
 }
 
-.with-border.green-checkbox input[type="checkbox"]:checked {
-    background-color: var(--success);
+.with-border.green-checkbox input[type='checkbox']:checked {
+  background-color: var(--success);
 }
 
-.with-border.yellow-checkbox input[type="checkbox"]:checked {
-    background-color: var(--warning);
+.with-border.yellow-checkbox input[type='checkbox']:checked {
+  background-color: var(--warning);
 }
-
 
 /*Message Cards*/
 
 .message-card {
-    background-color: white;
-    border-radius: 25px;
-    padding: 20px;
-    width: 100%;
-    max-width: 700px;
+  background-color: white;
+  border-radius: 25px;
+  padding: 20px;
+  width: 100%;
+  max-width: 700px;
 }
 
 .border-purple {
-    border-left: 15px solid var(--primary);
+  border-left: 15px solid var(--primary);
 }
 
 .border-green {
-    border-left: 15px solid var(--success);
+  border-left: 15px solid var(--success);
 }
 
 .border-red {
-    border-left: 15px solid var(--error);
+  border-left: 15px solid var(--error);
 }
 
 .border-yellow {
-    border-left: 15px solid var(--warning);
+  border-left: 15px solid var(--warning);
 }
 
 .icon-title {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
 }
 
 .message-icon {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    font-size: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-color);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-color);
 }
 
 .icon-purple {
-    background-color: var(--primary);
+  background-color: var(--primary);
 }
 
 .icon-green {
-    background-color: var(--success);
+  background-color: var(--success);
 }
 
 .icon-red {
-    background-color: var(--error);
+  background-color: var(--error);
 }
 
 .icon-yellow {
-    background-color: var(--warning);
+  background-color: var(--warning);
 }
 
 .title {
-    font-size: 28px;
-    font-weight: bold;
+  font-size: 28px;
+  font-weight: bold;
 }
 
 .title-purple {
-    color: var(--primary);
+  color: var(--primary);
 }
 
 .title-green {
-    color: var(--success);
+  color: var(--success);
 }
 
 .title-red {
-    color: var(--error);
+  color: var(--error);
 }
 
 .title-yellow {
-    color: var(--warning);
+  color: var(--warning);
 }
 
 .description {
-    font-size: 17px;
-    color: black;
-    margin-bottom: 15px;
+  font-size: 17px;
+  color: black;
+  margin-bottom: 15px;
 }
 
 .checkbox-row {
-    margin-top: 10px;
-    margin-bottom: 15px;
+  margin-top: 10px;
+  margin-bottom: 15px;
 }
 
 .button-row {
-    display: flex;
-    gap: 10px;
-    justify-content: start;
-    flex-wrap: wrap;
+  display: flex;
+  gap: 10px;
+  justify-content: start;
+  flex-wrap: wrap;
 }

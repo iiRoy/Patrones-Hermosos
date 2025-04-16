@@ -1,26 +1,101 @@
-# Lama Dev School Management Dashboard
+# 🎓 Patrones Hermosos
 
-## Getting Started
+Este proyecto está diseñado para gestionar datos del evento de Patrones Hermosos.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🚀 Tecnologías utilizadas
+
+- **Frontend**: React.js + Tailwind
+- **Backend/API**: Node.js + Express
+- **Base de datos**: MySQL (Prisma ORM)
+- **Control de versiones**: Git + GitHub
+
+---
+
+## 🌿 Estructura de ramas
+
+```plaintext
+main
+├── feature/
+│   ├── components
+│   ├── correo
+│   ├── rutasAPI
+│   └── sqlProcedures
+└── pages/
+    ├── coordinator
+    ├── forms
+    ├── home
+    ├── login
+    └── superuser
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📦 Instalación
 
-## Learn More
+1. Clona el repositorio:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+git clone https://github.com/usuario/proyecto.git
+cd proyecto
+```
 
-- [Lama Dev Youtube Channel](https://youtube.com/lamadev) 
-- [Next.js](https://nextjs.org/learn)
+2. Instala dependencias:
+
+```bash
+npm install
+```
+
+3. Configura el archivo `.env`:
+
+```env
+DATABASE_URL=mysql://usuario:contraseña@localhost:3306/nombre_db
+PORT=3000
+```
+
+4. Corre migraciones:
+
+```bash
+npx prisma migrate dev
+```
+
+5. Inicia el servidor:
+
+```bash
+npm install
+npm run build
+npm run dev
+```
+
+---
+
+## 🧑‍💻 Contribución
+
+1. Crea una rama:
+
+```bash
+git checkout -b feature/nombre-de-la-rama
+```
+
+2. Haz tus cambios, súbelos y crea un Pull Request hacia `main`.
+
+Consulta la [Guía de Contribución](./COLABORACIÓN.md) para más detalles.
+
+---
+
+## 🧠 Buenas prácticas
+
+- No trabajes directamente sobre `main`.
+- Usa mensajes de commit claros con formato `feat:`, `fix:`, etc.
+- Mantén ramas pequeñas y con enfoque único.
+- Siempre prueba antes de subir tus cambios.
+
+---
+
+## 📬 Contacto
+
+Para dudas o sugerencias, contacta a los responsables del repositorio o abre un [issue](https://github.com/iiRoy/Patrones-Hermosos/issues).
+
+---
+🚀 ¡Gracias por contribuir y ser parte de este proyecto! 

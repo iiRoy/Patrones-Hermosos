@@ -1,14 +1,22 @@
 {
   "name": "patrones-hermosos",
-  "version": "0.2.1",
+  "version": "0.6.3",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "nodemon src/server.js",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "cross-env NODE_ENV=production node src/server.js"
   },
   "dependencies": {
+    "@prisma/client": "^6.6.0",
+    "bcryptjs": "^3.0.2",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "express-validator": "^7.2.1",
+    "framer-motion": "^12.7.3",
+    "jsonwebtoken": "^9.0.2",
+    "lucide-react": "^0.488.0",
+    "morgan": "^1.10.0",
     "@tailwindcss/vite": "^4.1.2",
     "bcrypt": "^5.1.1",
     "mysql2": "^3.14.0",
@@ -21,15 +29,23 @@
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",
-    "@types/node": "^20",
+    "@types/node": "^20.17.30",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@types/react-select": "^5.0.0",
     "autoprefixer": "^10.4.21",
+    "concurrently": "^9.1.2",
+    "cross-env": "^7.0.3",
     "eslint": "^8",
     "eslint-config-next": "14.2.5",
+    "nodemon": "^3.1.9",
     "postcss": "^8.5.3",
+    "prisma": "^6.6.0",
     "tailwindcss": "^3.4.17",
-    "typescript": "^5"
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  },
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
   }
 }

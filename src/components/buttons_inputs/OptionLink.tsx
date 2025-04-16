@@ -1,46 +1,45 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import withIconDecorator from '../decorators/IconDecorator';
 
 interface OptionLinkProps {
   label: string;
-  icon: string;
+  Icon: React.FC<{
+    width?: number | string;
+    height?: number | string;
+    strokeColor?: string;
+    fillColor?: string;
+    className?: string;
+  }>;
   href: string;
 }
 
-const OptionLink: React.FC<OptionLinkProps> = ({ label, icon, href }) => {
+const OptionLink: React.FC<OptionLinkProps> = ({ label, Icon, href }) => {
   const pathname = usePathname();
+  const isActive = pathname === href;
+
+  const DecoratedIcon = withIconDecorator(Icon);
 
   return (
-<Link
-  href={href}
-  className={`
-    option-link ${pathname === href ? 'active' : ''}
-    flex justify-center items-center gap-2 items-center
-  `}
->
-  <Image
-    src={icon}
-    alt={label}
-    width={25}
-    height={25}
-    className="
-      md:min-w-[2vw] md:min-h-[2vw]
-      min-w-[3vmax] min-h-[3vmax]
-    "
-  />
-  <span
-    className="
-      option-label
-      hidden
-      lg:block
-    "
-  >
-    {label}
-  </span>
-</Link>
+    <Link
+      href={href}
+      className={`
+        option-link ${isActive ? 'active' : ''}
+        flex justify-center items-center gap-2 items-center
+      `}
+    >
+      <div className={`option-icon ${isActive ? 'active' : ''} flex items-center justify-center`}>
+        <DecoratedIcon
+          strokeColor={'#2E1C31'}
+          fillColor={'currentColor'}
+          width={'2rem'}
+          height={'2rem'}
+        />
+      </div>
+      <span className='option-label hidden lg:block'>{label}</span>
+    </Link>
   );
 };
 
