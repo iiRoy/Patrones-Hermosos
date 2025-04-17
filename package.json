@@ -6,7 +6,7 @@
     "dev": "nodemon src/server.js",
     "build": "next build",
     "start": "cross-env NODE_ENV=production node src/server.js",
-    "release": "semantic-release"
+    "release": "npx semantic-release --no-ci"
   },
   "dependencies": {
     "@prisma/client": "^6.6.0",
