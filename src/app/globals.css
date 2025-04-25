@@ -54,10 +54,10 @@
 }
 
 :root {
-  --primary: #97639c;
+  --primaryColor: #97639c;
   --primary-shade: #6e2d75;
   --primary-disabled: #301e31;
-  --secondary: #683756;
+  --secondaryColor: #683756;
   --secondary-shade: #c57fab;
   --secondary-disabled: #402436;
   --success: #4b914e;
@@ -73,7 +73,6 @@
   --accent: #b77690;
   --accent-disabled: #3f2831;
   --dim: #616161;
-  --background: #110e11;
 }
 
 .custom-button {
@@ -189,7 +188,7 @@
 
 /*Colores botones*/
 .button-primary {
-  background-color: var(--primary);
+  background-color: var(--primaryColor);
 }
 
 .button-primary:hover {
@@ -202,7 +201,7 @@
 }
 
 .button-secondary {
-  background-color: var(--secondary);
+  background-color: var(--secondaryColor);
 }
 
 .button-secondary-shade {
@@ -267,7 +266,7 @@
 }
 
 .input-primary {
-  background-color: var(--primary);
+  background-color: var(--primaryColor);
 }
 
 .input-primary-disabled {
@@ -275,7 +274,7 @@
 }
 
 .input-secondary {
-  background-color: var(--secondary);
+  background-color: var(--secondaryColor);
 }
 
 .input-secondary-disabled {
@@ -343,7 +342,7 @@
 
 .notification-purple-two {
   color: var(--text-color);
-  background-color: var(--primary);
+  background-color: var(--primaryColor);
 }
 
 .notification-icon {
@@ -379,7 +378,7 @@
 }
 
 .notification-icon-purple {
-  background-color: var(--primary);
+  background-color: var(--primaryColor);
 }
 
 .notification-icon-purple-two {
@@ -414,7 +413,7 @@
 }
 
 .notification-title-purple {
-  color: var(--primary);
+  color: var(--primaryColor);
 }
 
 .notification-text {
@@ -461,7 +460,7 @@
 }
 
 .notification-close-purple {
-  color: var(--primary);
+  color: var(--primaryColor);
 }
 
 .notification-close-yellow:hover {
@@ -507,7 +506,7 @@
 }
 
 .pagination .double-arrow-primary {
-  color: var(--primary);
+  color: var(--primaryColor);
 }
 
 .pagination .double-arrow-secondary-shade {
@@ -529,13 +528,13 @@
 }
 
 .pagination .active {
-  background-color: var(--primary);
+  background-color: var(--primaryColor);
   color: white;
   font-weight: bold;
 }
 
 .pagination .active-primary {
-  background-color: var(--primary);
+  background-color: var(--primaryColor);
 }
 
 .pagination .active-secondary-shade {
@@ -566,7 +565,7 @@
 }
 
 .option-link:hover {
-  color: var(--primary);
+  color: var(--primaryColor);
 }
 
 .option-icon {
@@ -662,21 +661,25 @@
   transition: all 0.2s ease;
 }
 
-.checkbox-container input[type='checkbox']:checked::before {
-  content: '';
-  position: absolute;
-  top: 2px;
-  left: 6px;
-  width: 5px;
-  height: 10px;
-  border: solid white;
-  border-width: 0 2px 2px 0;
-  transform: rotate(45deg);
+.checkbox-container input[type='checkbox'] {
+  position: relative;
+  /* Necesario para el ::before */
 }
+
+.checkbox-container input[type='checkbox']:checked::before {
+  content: 'x';
+  color: white;
+  font-size: 14px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 
 /* Colored styles */
 .purple-checkbox {
-  color: var(--primary);
+  color: var(--primaryColor);
 }
 
 .green-checkbox {
@@ -700,7 +703,7 @@
 }
 
 .purple-checkbox input[type='checkbox'] {
-  background-color: var(--primary);
+  background-color: var(--primaryColor);
 }
 
 .red-checkbox input[type='checkbox'] {
@@ -723,7 +726,7 @@
 
 .with-border.purple-checkbox input[type='checkbox'] {
   background-color: transparent;
-  border-color: var(--primary);
+  border-color: var(--primaryColor);
 }
 
 .with-border.red-checkbox input[type='checkbox'] {
@@ -747,7 +750,7 @@
 }
 
 .with-border.purple-checkbox input[type='checkbox']:checked {
-  background-color: var(--primary);
+  background-color: var(--primaryColor);
 }
 
 .with-border.red-checkbox input[type='checkbox']:checked {
@@ -773,7 +776,7 @@
 }
 
 .border-purple {
-  border-left: 15px solid var(--primary);
+  border-left: 15px solid var(--primaryColor);
 }
 
 .border-green {
@@ -807,7 +810,7 @@
 }
 
 .icon-purple {
-  background-color: var(--primary);
+  background-color: var(--primaryColor);
 }
 
 .icon-green {
@@ -828,7 +831,7 @@
 }
 
 .title-purple {
-  color: var(--primary);
+  color: var(--primaryColor);
 }
 
 .title-green {
@@ -859,4 +862,75 @@
   gap: 10px;
   justify-content: start;
   flex-wrap: wrap;
+}
+
+
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
 }

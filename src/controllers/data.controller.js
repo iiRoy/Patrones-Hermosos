@@ -32,12 +32,11 @@ const data = async (req, res) => {
         const rolCoord = rolMap[req.query.coord] || null;
 
         const [raw] = await prisma.$queryRawUnsafe(
-          `CALL resumen_evento(?, ?, ?, ?, ?)`,
+          `CALL resumen_evento(?, ?, ?, ?)`,
           role,
           email,
           idSede,
           rolColab,
-          rolCoord,
         );
 
         const outer = JSON.parse(raw.f0);
@@ -46,7 +45,7 @@ const data = async (req, res) => {
           total_participantes: JSON.parse(outer.total_participantes),
           total_colaboradores: JSON.parse(outer.total_colaboradores),
           total_mentoras: Number(outer.total_mentoras),
-          total_coordinadoras: Number(outer.total_coordinadoras),
+          total_coordinadoras: JSON.parse(outer.total_coordinadoras),
           total_sedes: outer.total_sedes ? JSON.parse(outer.total_sedes) : null,
         };
 

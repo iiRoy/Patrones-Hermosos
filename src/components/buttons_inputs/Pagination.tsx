@@ -1,97 +1,44 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
+import Link from 'next/link';
 
 interface PaginationProps {
-  currentPage?: number;
+  currentPage?: number; // el índice de la página actual (no el número visible, sino el índice del array)
   totalPages?: number;
+  pageLinks: string[]; // nuevo: arreglo con los href de cada página
   variant?: 'primary' | 'secondary-shade' | 'accent';
-  onPageChange?: (page: number) => void;
 }
 
 const Pagination: React.FC<PaginationProps> = ({
-  currentPage = 1,
-  totalPages = 11,
+  currentPage = 0,
+  totalPages = 1,
+  pageLinks,
   variant = 'primary',
-  onPageChange = () => {},
 }) => {
-  const getPageClass = (page: number) => {
-    const isActive = page === currentPage;
+  const [activeIndex, setActiveIndex] = useState(currentPage);
+
+  const getPageClass = (index: number) => {
+    const isActive = index === activeIndex;
     return `page ${isActive ? `active active-${variant}` : ''}`;
   };
 
-  const handlePageClick = (page: number) => {
-    if (page !== currentPage) {
-      onPageChange(page);
-    }
-  };
-
-  const pagesToShow = () => {
-    const pages = [];
-    if (totalPages <= 7) {
-      for (let i = 1; i <= totalPages; i++) {
-        pages.push(i);
-      }
-    } else {
-      pages.push(1);
-      if (currentPage > 4) pages.push(-1); // dots
-
-      const start = Math.max(2, currentPage - 1);
-      const end = Math.min(totalPages - 1, currentPage + 1);
-      for (let i = start; i <= end; i++) {
-        pages.push(i);
-      }
-
-      if (currentPage < totalPages - 3) pages.push(-1); // dots
-      pages.push(totalPages);
-    }
-
-    return pages;
+  const handlePageClick = (index: number) => {
+    setActiveIndex(index);
   };
 
   return (
     <div className='pagination'>
-      <a
-        href='#'
-        className='prev'
-        onClick={(e) => {
-          e.preventDefault();
-          if (currentPage > 1) onPageChange(currentPage - 1);
-        }}
-      >
-        <span className={`double-arrow double-arrow-${variant}`}>«</span> Previous
-      </a>
-
-      {pagesToShow().map((page, idx) =>
-        page === -1 ? (
-          <span className='dots' key={`dots-${idx}`}>
-            ...
-          </span>
-        ) : (
-          <a
-            href='#'
-            key={page}
-            className={getPageClass(page)}
-            onClick={(e) => {
-              e.preventDefault();
-              handlePageClick(page);
-            }}
-          >
-            {page}
-          </a>
-        ),
-      )}
-
-      <a
-        href='#'
-        className='next'
-        onClick={(e) => {
-          e.preventDefault();
-          if (currentPage < totalPages) onPageChange(currentPage + 1);
-        }}
-      >
-        Next <span className={`double-arrow double-arrow-${variant}`}>»</span>
-      </a>
+      {pageLinks.map((href, index) => (
+        <Link
+          key={index}
+          href={href}
+          className={getPageClass(index)}
+          onClick={() => handlePageClick(index)}
+        >
+          {index + 1}
+        </Link>
+      ))}
     </div>
   );
 };

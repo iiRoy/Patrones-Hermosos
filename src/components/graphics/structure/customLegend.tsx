@@ -3,20 +3,28 @@ import React from 'react';
 
 interface CustomLegendProps {
   legendKeys: string[];
+  colors: string[];
 }
 
-const CustomLegend: React.FC<CustomLegendProps> = ({ legendKeys }) => (
-  <div className='flex items-center gap-4'>
-    {legendKeys.map((key, index) => (
-      <div key={key} className='flex items-center gap-1'>
-        <span
-          className={`w-3 h-3 rounded-full ${index % 2 === 0 ? 'bg-primary' : 'bg-secondaryShade'}`}
-        />
-        <span className={`font-medium ${index % 2 === 0 ? 'text-primary' : 'text-secondaryShade'}`}>
-          {key.charAt(0).toUpperCase() + key.slice(1)}
-        </span>
-      </div>
-    ))}
+const CustomLegend: React.FC<CustomLegendProps> = ({ legendKeys, colors }) => (
+  <div className='flex text-sm items-center gap-3 flex-wrap justify-center w-full'>
+    {legendKeys.map((key, index) => {
+      const color = colors[index % colors.length];
+      return (
+        <div key={key} className='flex items-center gap-1'>
+          <span
+            className="w-3 h-3 rounded-full"
+            style={{ backgroundColor: color }}
+          />
+          <span
+            className="font-medium"
+            style={{ color }}
+          >
+            {key.charAt(0).toUpperCase() + key.slice(1)}
+          </span>
+        </div>
+      );
+    })}
   </div>
 );
 

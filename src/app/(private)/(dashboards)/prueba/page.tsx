@@ -1,47 +1,71 @@
 'use client';
 
-import UserCard from '@/components/headers_menu_users/UserCard';
+import React, { useState } from 'react';
 import Navbar from '@/components/headers_menu_users/navbar';
 import Pagination from '@/components/buttons_inputs/Pagination';
 import InputField from '@/components/buttons_inputs/InputField';
-import Notification from '@/components/buttons_inputs/Notification';
 import Button from '@/components/buttons_inputs/Button';
 import Checkbox from '@/components/buttons_inputs/Checkbox';
 import MessageCard from '@/components/buttons_inputs/MessageCard';
-import { Acorn, ChatCircleText, Check, Plus, Star, User, X } from '@/components/icons';
-import { Cross } from 'recharts';
+import { Acorn, Check, Plus, Star, User, X } from '@/components/icons';
+
 
 const EstadisticasAdmin = () => {
+  const [inputValue, setInputValue] = useState('');
+
   return (
     <div className='p-4 flex gap-4 flex-col md:flex-row'>
       <div className='w-full flex flex-col gap-8'>
         {/*USER CARD*/}
         <Navbar />
         <Pagination
-          currentPage={7}
-          totalPages={11}
-          variant='accent' //"accent" o "primary", "secondary-shade"
-          onPageChange={(page) => console.log('Página cambiada:', page)}
+          currentPage={0}
+          totalPages={6}
+          variant='accent'
+          pageLinks={['/prueba', '/prueba', '/prueba', '/prueba', '/prueba', '/']}
         />
+
         <Pagination
           currentPage={2}
-          totalPages={11}
-          variant='primary' //"accent" o "primary", "secondary-shade"
-          onPageChange={(page) => console.log('Página cambiada:', page)}
+          totalPages={4}
+          variant='primary'
+          pageLinks={['/prueba', '/prueba', '/prueba', '/prueba']}
         />
+
         <Pagination
-          currentPage={3}
-          totalPages={11}
-          variant='secondary-shade' //"accent" o "primary", "secondary-shade"
-          onPageChange={(page) => console.log('Página cambiada:', page)}
+          currentPage={1}
+          totalPages={5}
+          variant='secondary-shade'
+          pageLinks={['/prueba', '/prueba', '/prueba', '/prueba', '/prueba']}
         />
+
+        <InputField
+          label='Buscar usuario'
+          showDescription={false}
+          placeholder='Escribe un nombre'
+          showError={true}
+          variant='primary'
+          icon='User'
+          value={inputValue}
+          onChangeText={(val) => {
+            console.log('Valor actual del input:', val);
+            setInputValue(val);
+          }}
+        />
+
+        <Button
+          label="Mostrar valor"
+          variant="success"
+          onClick={() => alert(`Valor: ${inputValue}`)}
+        />
+
         <InputField
           label='Label'
           description='Description'
           placeholder='Placeholder'
           error='Error'
           variant='warning'
-          Icon={User}
+          icon='User'
         />
         <InputField
           label='Sign In'
@@ -49,7 +73,7 @@ const EstadisticasAdmin = () => {
           placeholder='Username'
           showError={false}
           variant='primary'
-          Icon={User}
+          icon='User'
         />
         <InputField
           label='Sign In'
@@ -58,7 +82,7 @@ const EstadisticasAdmin = () => {
           showError={false}
           error='Error'
           variant='primary-disabled'
-          Icon={User}
+          icon='User'
         />
         <InputField
           label='Sign In'
@@ -66,36 +90,9 @@ const EstadisticasAdmin = () => {
           placeholder='Username'
           error="Error: That user doesn't exist"
           variant='warning'
-          Icon={User}
+          icon='User'
         />
-        <Notification
-          color='green'
-          variant='one'
-          title='¡Éxito!'
-          message='Tu acción se completó correctamente.'
-          Icon={ChatCircleText}
-        />
-        <Notification
-          color='purple'
-          variant='one'
-          title='Notificación'
-          message='Has recibido una notificación'
-          Icon={ChatCircleText}
-        />
-        <Notification
-          color='red'
-          variant='two'
-          title='Error'
-          message='Hubo un problema al guardar los datos.'
-          Icon={ChatCircleText}
-        />
-        <Notification
-          color='yellow'
-          variant='two'
-          title='Advertencia'
-          message='Uno de los datos introducidos es incorrecto'
-          Icon={ChatCircleText}
-        />
+
         <Button
           label='Perfil'
           variant='secondary'
@@ -104,8 +101,26 @@ const EstadisticasAdmin = () => {
           showRightIcon
           IconRight={Plus}
         />
+        <Button
+          label="Iniciar sesión"
+          variant="success"
+          onClick={() => console.log('Iniciar sesión')}
+          showLeftIcon
+          IconLeft={User}
+        />
+
+        <Button
+          label="Ir a Home"
+          variant="primary"
+          href="/"
+          IconLeft={User}
+          showLeftIcon
+        />
+
+
         <Button label='Add' variant='primary' round showLeftIcon IconLeft={Star} />
         <Button label='Enviar' variant='success' />
+
 
         <Checkbox
           label='Label'
@@ -145,6 +160,7 @@ const EstadisticasAdmin = () => {
           bordered={false}
           onChange={(val) => console.log('New state:', val)}
         />
+
 
         <MessageCard
           color='purple'
